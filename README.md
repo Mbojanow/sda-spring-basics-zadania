@@ -8,3 +8,6 @@ aplikacji i niech pola spełniają następujące warunki:
 - pole `value` niech będzie miało długość pomiędzy 1 a 25. Nie zmieniaj domyślnej wiadomości błędu.
 - pole `count` niech będzie miało minimalną wartość 3. Nie zmieniaj domyślnej wiadomości błędu.
 - pole `count` dodatkowo nie może mieć wartości `null`. Nadpisz domyślną wiadomość: `count cannot be null`.
+
+Możesz sprawdzić swoją implementację uruchamiając testy w klasie SdaConfigurationTest.
+Rozwiązanie zadania znajdziesz na branchu `zad7_rozw`.
