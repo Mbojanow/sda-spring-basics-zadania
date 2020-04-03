@@ -1,7 +1,10 @@
 # Spring zadania
 
-## zadanie 6
+## zadanie 7
 
-Spójrz na plik `application.properties` w katalogu resources. Na podstawie zawartości tego pliku, zaimplementuj klasę
-SdaConfiguration która powinna bindować propertiesy w pliku `application.properties` to pól tej klasy.
-Następnie sprawdź swoją implementację uruchamiając testy w klasie SdaConfigurationTest.
+Do klasy konfiguracyjnej SdaConfiguration dodaj pole `count`. Niech obiekt SdaConfiguration będzie walidowany na starcie
+aplikacji i niech pola spełniają następujące warunki:
+- pole `key` niech będzie miało długość conajmniej 3. Nie zmieniaj domyślnej wiadomości błędu.
+- pole `value` niech będzie miało długość pomiędzy 1 a 25. Nie zmieniaj domyślnej wiadomości błędu.
+- pole `count` niech będzie miało minimalną wartość 3. Nie zmieniaj domyślnej wiadomości błędu.
+- pole `count` dodatkowo nie może mieć wartości `null`. Nadpisz domyślną wiadomość: `count cannot be null`.
