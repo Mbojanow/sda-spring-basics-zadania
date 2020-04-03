@@ -1,5 +1,4 @@
 package pl.sdacademy.springtasks;
 
-public class MovieCrudRepository {
-
+public class SdaConfiguration {
 }

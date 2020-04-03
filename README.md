@@ -1,25 +1,9 @@
 # Spring zadania
 
-## zadanie 5
+## zadanie 6
 
-Tabela 'movies' reprezentowana przez klasę Movie posiada następujące pola
-- id, typu Long, które jest automatycznie generowanym identyfikatorem,
-- title, typu String, które reprezentuje tytuł filmu,
-- lengthInMinutes, typu Integer, które reprezentuje długość filmu w minutach.
-
-Dodaj odpowiednie adnotacje do klasy Movie aby klasa ta reprezetowała opisaną wyżej encję.
-
-Stwórz implementację klasy MovieCrudService. Klasa ta powinna implementować interfejs MovieRepository i
-umożliwiać tworzyć, pobierać, usuwać i aktualizować rekordy Movie w bazie danych wykorzystując bean EntityManager.
-Projekt aktualnie działa z bazą H2 i żadna konfiguracja nie jest wymagana. 
-Pamiętaj różnież, że warstwa repozytorium (lub tzw. DAO) nie jest odpowiedzialna za walidację.
-
-Sprawdź swoją implementację uruchamiając testy w klasie MovieCrudRepositoryTest.
-Rozwiązanie zadania znajduje się na branchu `zad5_rozw`.
-
-
-
-
-
-
-
+Spójrz na plik `application.properties` w katalogu resources. Na podstawie zawartości tego pliku, zaimplementuj klasę
+SdaConfiguration która powinna bindować propertiesy w pliku `application.properties` to pól tej klasy.
+Następnie sprawdź swoją implementację uruchamiając testy w klasie SdaConfigurationTest.
+ 
+Rozwiązanie zadania znajdziesz na branchu `zad6_rozw`
