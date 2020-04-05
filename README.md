@@ -9,7 +9,7 @@ Tabela 'movies' reprezentowana przez klasę Movie posiada następujące pola
 
 Dodaj odpowiednie adnotacje do klasy Movie aby klasa ta reprezetowała opisaną wyżej encję.
 
-Stwórz implementację klasy MovieCrudService. Klasa ta powinna implementować interfejs MovieRepository i
+Stwórz implementację klasy MovieCrudRepository. Klasa ta powinna implementować interfejs MovieRepository i
 umożliwiać tworzyć, pobierać, usuwać i aktualizować rekordy Movie w bazie danych wykorzystując bean EntityManager.
 Projekt aktualnie działa z bazą H2 i żadna konfiguracja nie jest wymagana. 
 Pamiętaj różnież, że warstwa repozytorium (lub tzw. DAO) nie jest odpowiedzialna za walidację.
