@@ -4,7 +4,7 @@ public class AwsAuthenticationHandler implements AuthenticationHandler {
   @Override
   public boolean authenticate(final Credentials credentials) {
     if (supports(credentials.getClass())) {
-      return authenicateInAws(credentials);
+      return authenticateInAws(credentials);
     }
     return false;
   }
@@ -14,7 +14,7 @@ public class AwsAuthenticationHandler implements AuthenticationHandler {
     return clazz.equals(AwsSignature.class);
   }
 
-  public boolean authenicateInAws(Credentials credentials) {
+  public boolean authenticateInAws(Credentials credentials) {
     return credentials.getCredentials("someUserId").length() == 5; // dummy implementation
   }
 }
