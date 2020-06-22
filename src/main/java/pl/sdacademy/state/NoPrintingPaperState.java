@@ -20,6 +20,7 @@ public class NoPrintingPaperState implements ParkingTicketVendingMachineState {
 
   @Override
   public void openMachineAndAddPrintingPaperPieces() {
-    machine.setMessage("Only authorized personel can add paper");
+    machine.addPrintingPaperPieces(100);
+    machine.setState(MoneyMachineState.NEED_PAYMENT);
   }
 }

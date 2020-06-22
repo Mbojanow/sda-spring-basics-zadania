@@ -16,6 +16,11 @@ public class PaidState implements ParkingTicketVendingMachineState {
   @Override
   public void pressPrintingButton() {
     machine.printTicket();
+    if (machine.getPrintingPaperPieces() == 0) {
+      machine.setState(MoneyMachineState.NO_PAPER);
+    } else {
+      machine.setState(MoneyMachineState.NEED_PAYMENT);
+    }
   }
 
   @Override

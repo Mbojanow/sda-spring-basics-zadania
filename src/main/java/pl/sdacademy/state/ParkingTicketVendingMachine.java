@@ -13,10 +13,19 @@ public class ParkingTicketVendingMachine {
 
   public void setMessage(final String message) {
     this.message = message;
+    System.out.println("MESSAGE: " + message);
   }
 
   public void setState(final MoneyMachineState state) {
     this.state = state;
+  }
+
+  public MoneyMachineState getState() {
+    return state;
+  }
+
+  public int getPrintingPaperPieces() {
+    return printingPaperPieces;
   }
 
   public void addPrintingPaperPieces(final int pieces) {
@@ -24,41 +33,22 @@ public class ParkingTicketVendingMachine {
       throw new UnsupportedOperationException("Cannot add non positive number of pieces");
     }
     printingPaperPieces += pieces;
-
-    if (state == MoneyMachineState.NO_PAPER) {
-      state = MoneyMachineState.NEED_PAYMENT;
-    }
     message = "Please pay for the parking";
   }
 
   public void payForOneHourWithCreditCard() {
-    if (state == MoneyMachineState.NEED_PAYMENT) {
-      log.info("Paying for parking 5$");
-      state = MoneyMachineState.PAID_READY_TO_PRINT;
-    }
+    log.info("Paying for parking 5$");
     message = "Please click the button to print the ticket";
   }
 
   public void printTicket() {
-    if (state == MoneyMachineState.PAID_READY_TO_PRINT) {
-      printingPaperPieces -= 1;
-      log.info("Ticket valid thru " + LocalDateTime.now().plusHours(1));
-
-      if (printingPaperPieces == 0) {
-        state = MoneyMachineState.NO_PAPER;
-      } else {
-        state = MoneyMachineState.NEED_PAYMENT;
-      }
-    }
-
+    printingPaperPieces -= 1;
+    log.info("Ticket valid thru " + LocalDateTime.now().plusHours(1));
     message = "Ticket printed. Please collect it";
   }
 
   public void goDown() {
-    if (state == MoneyMachineState.PAID_READY_TO_PRINT) {
-      log.info("Trying to revert last transaction");
-    }
-    state = MoneyMachineState.UNAVAILABLE;
+    log.info("Trying to revert last transaction");
     message = "Vending machine is unavailable. Try another one";
   }
 

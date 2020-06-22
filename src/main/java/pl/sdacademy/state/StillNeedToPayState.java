@@ -11,6 +11,9 @@ public class StillNeedToPayState implements ParkingTicketVendingMachineState {
   @Override
   public void moveCreditCardToSensor() {
     machine.payForOneHourWithCreditCard();
+    if (machine.getState() == MoneyMachineState.NEED_PAYMENT) {
+      machine.setState(MoneyMachineState.PAID_READY_TO_PRINT);
+    }
   }
 
   @Override

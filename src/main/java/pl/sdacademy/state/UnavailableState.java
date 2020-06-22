@@ -10,16 +10,17 @@ public class UnavailableState implements ParkingTicketVendingMachineState {
 
   @Override
   public void moveCreditCardToSensor() {
-
+    machine.setMessage("Vending machine is unavailable");
   }
 
   @Override
   public void pressPrintingButton() {
-
+    machine.goDown();
+    machine.setState(MoneyMachineState.UNAVAILABLE);
   }
 
   @Override
   public void openMachineAndAddPrintingPaperPieces() {
-
+    machine.setMessage("Vending machine is unavailable");
   }
 }
